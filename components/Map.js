@@ -14,9 +14,10 @@ export default function Map() {
 
     return (
         <ReactMapGL
+            mapStyle="mapbox://styles/mapbox/streets-v9"
             mapboxApiAccessToken={TOKEN}
-            {...viewport}
             onViewportChange={setViewport}
+            {...viewport}
         />
     );
 }
