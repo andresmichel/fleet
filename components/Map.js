@@ -1,5 +1,5 @@
 import React, { useState, } from 'react';
-import ReactMapGL, { NavigationControl } from 'react-map-gl';
+import ReactMapGL from 'react-map-gl';
 import Marker from '../components/Marker';
 
 const TOKEN = 'pk.eyJ1IjoiYW5kcmVzbWljaGVsIiwiYSI6ImNqa3k2NGFsbzBmODYza21tcWo2NjdlcGUifQ.txk49vcGtXSpKyQOnPqiOQ';
@@ -19,9 +19,6 @@ export default function Map() {
             onViewportChange={setViewport}
             {...viewport}
         >
-            <div style={{ position: 'absolute', top: 20, right: 20 }}>
-                <NavigationControl />
-            </div>
             <Marker
                 latitude={37.7577}
                 longitude={-122.4376}
