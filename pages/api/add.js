@@ -8,7 +8,7 @@ AWS.config.update({
 
 module.exports = (req, res) => {
     const crypto = require('crypto');
-    const { lat, lng } = req.body.lat;
+    const { lat, lng } = req.body;
     const docClient = new AWS.DynamoDB.DocumentClient();
     const params = {
         TableName: process.env.TABLE_NAME,
