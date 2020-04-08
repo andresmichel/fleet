@@ -2,6 +2,6 @@
     "env": {
         "ACCESS_KEY_ID": "@aws-access-key-id",
         "SECRET_ACCESS_KEY": "@aws-secret-access-key",
-        "locations": "@table-name"
+        "TABLE_NAME": "@table-name"
     }
 }
