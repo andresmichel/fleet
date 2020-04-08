@@ -8,14 +8,14 @@ AWS.config.update({
 
 module.exports = (req, res) => {
     const crypto = require('crypto');
-    const { lat, lng } = req.body;
+    const { latitude, longitude } = req.body;
     const docClient = new AWS.DynamoDB.DocumentClient();
     const params = {
         TableName: process.env.TABLE_NAME,
         Item: {
-            id: crypto.createHash('md5').update(`${lat},${lng}`).digest('hex'),
-            lat,
-            lng,
+            id: crypto.createHash('md5').update(`${latitude},${longitude}`).digest('hex'),
+            latitude,
+            longitude,
         }
     };
     docClient.put(params, function (err, data) {
