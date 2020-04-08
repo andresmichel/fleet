@@ -15,7 +15,8 @@ module.exports = (_, res) => {
         if (err) {
             res.json({
                 success: false,
-                message: 'Error: Server error'
+                message: 'Error: Server error',
+                error: err
             });
         } else {
             const { Items } = data;

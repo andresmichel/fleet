@@ -22,7 +22,8 @@ module.exports = (req, res) => {
         if (err) {
             res.json({
                 success: false,
-                message: 'Error: Server error'
+                message: 'Error: Server error',
+                error: err
             });
         } else {
             res.json({
