@@ -8,7 +8,7 @@ AWS.config.update({
 
 module.exports = (req, res) => {
     const crypto = require('crypto');
-    const { latitude, longitude } = req.body;
+    const { latitude, longitude, deviceId } = req.body;
     const docClient = new AWS.DynamoDB.DocumentClient();
     const date = new Date();
     const params = {
@@ -18,6 +18,7 @@ module.exports = (req, res) => {
             timestamp: date.getTime().toString(),
             latitude,
             longitude,
+            deviceId,
         }
     };
     docClient.put(params, function (err, data) {
