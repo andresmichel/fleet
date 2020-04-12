@@ -15,7 +15,7 @@ module.exports = (req, res) => {
         TableName: process.env.TABLE_NAME,
         Item: {
             id: crypto.createHash('md5').update(`${latitude},${longitude}`).digest('hex'),
-            createdAt: date.getTime(),
+            timestamp: date.getTime(),
             latitude,
             longitude,
         }
